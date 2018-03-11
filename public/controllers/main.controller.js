@@ -16,7 +16,7 @@ app.controller("MainCtrl", function($scope, fizzBuzzApiService){
     }
 
     $scope.reset = function(){
-        $scope.param = "";
+        $scope.number = "";
         $scope.displayError = false;
         $scope.displayResult = false;
     }

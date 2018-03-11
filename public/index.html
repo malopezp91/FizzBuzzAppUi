@@ -8,17 +8,18 @@
     </title>
 </head>
 
-<body ng-controller="MainCtrl">
+<body ng-controller="MainCtrl" class="container">
     <h1 class="display-3">Welcome to the FizzBuzzApp!</h1>
 
     <div class="lead">Input number to calculate its FizzBuzz!</div>
     <div class="input-group input-group-sm mb-3">
         <input type="text" ng-model="number" class="form-control">
         <button class="btn btn-outline-secondary" ng-click="callAPIWith(number)">Go!</button>
+        <button class="btn btn-outline-secondary" ng-click="reset()">Clear All</button>
     </div>
 
     <div class="alert alert-primary" ng-if="displayResult">Fizz Buzz is: {{fizBuzzResponse}}</div>
-    <div class="alert alert-danger"" ng-if="displayError">ERROR! API says: {{fizBuzzError}}</div>
+    <div class="alert alert-danger" ng-if="displayError">ERROR! API says: {{fizBuzzError}}</div>
 
     
     <script src="angular/angular.js"></script>
