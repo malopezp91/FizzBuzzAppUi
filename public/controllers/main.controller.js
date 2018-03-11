@@ -1,9 +1,23 @@
 app.controller("MainCtrl", function($scope, fizzBuzzApiService){
     $scope.nombre = "Miguel";
+    $scope.displayResult = false;
+    $scope.displayError = false;
 
-    $scope.testing = function(){
-        fizzBuzzApiService.getFizzBuzzLongList(5).then(function(dataFromSvc) {
-            $scope.values = dataFromSvc;
+    $scope.callAPIWith = function(param){
+        $scope.reset();
+        
+        fizzBuzzApiService.getFizzBuzzLongList(param).then(function(dataFromSvc) {
+            $scope.fizBuzzResponse = dataFromSvc.fizzBuzz;
+            $scope.displayResult = true;
+        }).catch(function(error) {
+            $scope.displayError = true;
+            $scope.fizBuzzError = error.data.message;
         });
+    }
+
+    $scope.reset = function(){
+        $scope.param = "";
+        $scope.displayError = false;
+        $scope.displayResult = false;
     }
 })

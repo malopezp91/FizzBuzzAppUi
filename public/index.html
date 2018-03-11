@@ -9,12 +9,12 @@
 </head>
 
 <body ng-controller="MainCtrl">
-    <h1>FizzBuzzApp</h1>
-    <h1>Helllooooo</h1>
-    <h2>{{nombre}}</h2>
-    <h2>{{values}}</h2>
+    <h1>Welcome to the FizzBuzzApp!</h1>
 
-    <button ng-click="testing()">Call the API</button>
+    <div>Input number to calculate its FizzBuzz!</div><span><input type="text" ng-model="number"><button ng-click="callAPIWith(number)">Go!</button></span>
+
+    <div ng-if="displayResult">Fizz Buzz is: {{fizBuzzResponse}}</div>
+    <div ng-if="displayError">ERROR! API says: {{fizBuzzError}}</div>
 
     
     <script src="angular/angular.js"></script>
